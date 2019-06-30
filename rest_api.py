@@ -12,22 +12,26 @@ def home():
     return "Home"
 
 
+def prepare_response(data):
+    return {data_point for data_point in data}
+
+
 @app.route('/passive_measurements')
 def get_passive_measurements():
     dates = get_date_params(request)
-    return db_accessor.get_passive_measurement_data(dates[0], dates[1])
+    return prepare_response(db_accessor.get_passive_measurement_data(dates[0], dates[1]))
 
 
-@app.route('/wind_speed')
+@app.route('/wind_speeds')
 def get_wind_speed():
     dates = get_date_params(request)
-    return db_accessor.get_wind_speed_measurements(dates[0], dates[1])
+    return prepare_response(db_accessor.get_wind_speed_measurements(dates[0], dates[1]))
 
 
 @app.route('/wind_gusts')
 def get_wind_gusts():
     dates = get_date_params(request)
-    return db_accessor.get_wind_gust_measurement(dates[0], dates[1])
+    return prepare_response(db_accessor.get_wind_gust_measurement(dates[0], dates[1]))
 
 
 def get_date_params(client_request):

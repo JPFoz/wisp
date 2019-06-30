@@ -77,7 +77,7 @@ class DbAccessor(object):
         if not self.pool:
             self.configure_connection()
         sql = "SELECT * FROM wind_speed_measurement WHERE date_created > %s AND date_created < %s"
-        params = (date_end, date_start)
+        params = (date_start, date_end)
 
         query_result = self.pool.execute(sql, params)
         results = []
@@ -97,7 +97,7 @@ class DbAccessor(object):
     def get_wind_gust_measurement(self, date_start, date_end):
         if not self.pool:
             self.configure_connection()
-        sql = "SELECT * fROM wind_guest_measurement WHERE date_created > %s AND date_created < %s"
+        sql = "SELECT * fROM wind_gust_measurement WHERE date_created > %s AND date_created < %s"
         params = (date_start, date_end)
 
         query_result = self.pool.execute(sql, params)
@@ -129,7 +129,7 @@ class DbAccessor(object):
         if not self.pool:
             self.configure_connection()
         sql = "SELECT * FROM passive_measurement WHERE date_created > %s AND date_created < %s"
-        params = (date_end, date_start)
+        params = (date_start, date_end)
 
         query_result = self.pool.execute(sql, params)
 
