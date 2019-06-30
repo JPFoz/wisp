@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c085de3-38a1-4120-a789-592d1edc62fb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rest_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/rest_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/db_accessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/db_accessor.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,10 +55,10 @@
       <file leaf-file-name="rest_api.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rest_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+            <state relative-caret-position="292">
+              <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -277,7 +275,7 @@
         <state relative-caret-position="435">
           <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -341,10 +339,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rest_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+        <state relative-caret-position="292">
+          <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
