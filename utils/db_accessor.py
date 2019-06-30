@@ -73,7 +73,7 @@ class DbAccessor(object):
     def configure_connection(self):
         self.pool = MySQLPool()
 
-    def get_wind_speed_data(self, date_start, date_end):
+    def get_wind_speed_measurements(self, date_start, date_end):
         if not self.pool:
             self.configure_connection()
         print(date_start)

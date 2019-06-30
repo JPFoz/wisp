@@ -1,12 +1,11 @@
 import bme280
-import datetime
-import bme280
 import smbus2
 import math
 from time import sleep
 from threading import Thread
 from utils.db_accessor import DbAccessor
 from gpiozero import Button
+
 port = 1
 address = 0x76
 bus = smbus2.SMBus(port)
@@ -18,6 +17,7 @@ radius = 9  # cm
 spin_count = 0
 wind_speed_sample_duration = 5  # secs
 wind_gust_sample_duration = 20  # secs
+passive_sample_duration = 10  # secs
 anemometer_factor = 1.18
 cms_in_km = 100000.0
 seconds_in_hour = 3600
@@ -37,13 +37,12 @@ def make_passive_measurement():
 def run_passive_daemon():
     while True:
         make_passive_measurement()
-        sleep(1)
+        sleep(passive_sample_duration)
 
 
 def track_spin():
     global spin_count
     spin_count += 1
-    print("Spin count: " + str(spin_count))
 
 
 def calculate_wind_speed():
@@ -86,5 +85,6 @@ def main():
     Thread(target=run_active_wind_gust_daemon).start()
 
 
-main()
+if __name__ == '__main__':
+    main()
 

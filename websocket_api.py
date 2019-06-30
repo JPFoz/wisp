@@ -8,12 +8,10 @@ accessor = DbAccessor()
 
 
 async def serve_client(websocket, path):
-    print(path)
     while True:
         if 'wind' in path:
-            latest = accessor.get_wind_speed_data(datetime.datetime.now(),datetime.datetime.now() - timedelta(seconds=5))
-            print(latest)
-            await websocket.send(str(latest))
+            latest = accessor.get_wind_speed_measurements(datetime.datetime.now(), datetime.datetime.now() - timedelta(seconds=5))
+            await websocket.send(latest)
             await asyncio.sleep(5)
 
 start_server = websockets.serve(serve_client, '192.168.3.7', 5000)

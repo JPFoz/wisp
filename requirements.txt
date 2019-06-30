@@ -1,2 +1,5 @@
 RPi.bme280
-mysqlclient
+flask
+mysql-connector-python
+websockets
+gpiozero
