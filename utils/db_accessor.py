@@ -14,15 +14,7 @@ class MySQLPool(object):
     def __init__(self):
         self.pool = self.create_pool()
 
-    def create_pool(self, pool_name="mypool", pool_size=3):
-        """
-        Create a connection pool, after created, the request of connecting
-        MySQL could get a connection from this pool instead of request to
-        create a connection.
-        :param pool_name: the name of pool, default is "mypool"
-        :param pool_size: the size of pool, default is 3
-        :return: connection pool
-        """
+    def create_pool(self, pool_name="pool", pool_size=3):
         pool = mysql.connector.pooling.MySQLConnectionPool(
             pool_name=pool_name,
             pool_size=pool_size,
@@ -31,25 +23,10 @@ class MySQLPool(object):
         return pool
 
     def close(self, conn, cursor):
-        """
-        A method used to close connection of mysql.
-        :param conn:
-        :param cursor:
-        :return:
-        """
         cursor.close()
         conn.close()
 
     def execute(self, sql, args=None, commit=False):
-        """
-        Execute a sql, it could be with args and with out args. The usage is
-        similar with execute() function in module pymysql.
-        :param sql: sql clause
-        :param args: args need by sql clause
-        :param commit: whether to commit
-        :return: if commit, return None, else, return result
-        """
-        # get connection form connection pool instead of create one.
         conn = self.pool.get_connection()
         cursor = conn.cursor()
         if args:
@@ -82,7 +59,7 @@ class DbAccessor(object):
         query_result = self.pool.execute(sql, params)
         results = []
         for (record_id, wind_speed, date_created) in query_result:
-            results.append({"wind_speed": wind_speed, "date_created": date_created})
+            results.append({"wind_speed": float(wind_speed), "date_created": date_created})
 
         return results
 
@@ -104,7 +81,7 @@ class DbAccessor(object):
 
         results = []
         for (record_id, wind_gust, date_created) in query_result:
-            results.append({"wind_gust": wind_gust, "date_created": date_created})
+            results.append({"wind_gust": float(wind_gust), "date_created": date_created})
 
         return results
 
@@ -135,9 +112,9 @@ class DbAccessor(object):
 
         results = []
         for (record_id, temp, humidity, pressure, date_created) in query_result:
-            results.append({"temperature": temp,
-                            "pressure": pressure,
-                            "humidity": humidity,
+            results.append({"temperature": float(temp),
+                            "pressure": float(pressure),
+                            "humidity": float(humidity),
                             "date_created": date_created})
 
 
