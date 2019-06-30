@@ -76,14 +76,10 @@ class DbAccessor(object):
     def get_wind_speed_measurements(self, date_start, date_end):
         if not self.pool:
             self.configure_connection()
-        print(date_start)
-        print(date_end)
         sql = "SELECT * FROM wind_speed_measurement WHERE date_created > %s AND date_created < %s"
         params = (date_end, date_start)
 
         query_result = self.pool.execute(sql, params)
-        print(sql.format(params))
-        print(query_result)
         results = []
         for (record_id, wind_speed, date_created) in query_result:
             results.append({"wind_speed": wind_speed, "date_created": date_created})
