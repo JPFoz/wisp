@@ -9,7 +9,7 @@ wisp-app/.pnp.js
 /coverage
 
 # production
-wisp-app//build
+*.pyc
 
 # misc
 .DS_Store
