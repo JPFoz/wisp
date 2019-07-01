@@ -17,6 +17,7 @@ wisp-app//build
 .env.development.local
 .env.test.local
 .env.production.local
+.idea/*
 
 wisp-app/npm-debug.log*
 wisp-app/yarn-debug.log*
