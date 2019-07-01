@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/wisp-app/node_modules
+/wisp-app/.pnp
+wisp-app/.pnp.js
+
+# testing
+/coverage
+
+# production
+wisp-app//build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+wisp-app/npm-debug.log*
+wisp-app/yarn-debug.log*
+wisp-app/yarn-error.log*

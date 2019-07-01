@@ -116,5 +116,6 @@ class DbAccessor(object):
                             "pressure": float(pressure),
                             "humidity": float(humidity),
                             "date_created": date_created})
+        return results
 
 
