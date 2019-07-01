@@ -23,3 +23,4 @@ wisp-app//build
 wisp-app/npm-debug.log*
 wisp-app/yarn-debug.log*
 wisp-app/yarn-error.log*
+wisp-app/build/
