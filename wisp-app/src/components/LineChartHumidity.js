@@ -69,7 +69,7 @@ class LineChartHuimdity extends React.Component {
   }
 
   componentDidMount(){
-      fetch("http://127.0.0.1:8080/passive_measurements")
+      fetch("http://192.168.3.7:8080/passive_measurements")
             .then(response => response.json())
             .then(data => this.setState({ data : chartData(extractPoints(data.results),extractLabels(data.results)) }));
     }

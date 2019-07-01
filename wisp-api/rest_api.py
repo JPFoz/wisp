@@ -1,15 +1,15 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import datetime
 from datetime import timedelta
 from utils.db_accessor import DbAccessor
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="../wisp-app/build/static", template_folder="../wisp-app/build")
 db_accessor = DbAccessor()
 
 
-@app.route('/')
+@app.route("/")
 def home():
-    return "Home"
+    return render_template('index.html')
 
 
 @app.route('/passive_measurements')

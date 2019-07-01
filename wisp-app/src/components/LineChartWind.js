@@ -69,7 +69,7 @@ class LineChartWind extends React.Component {
   }
 
   componentDidMount(){
-      fetch("http://127.0.0.1:8080/wind_speeds")
+      fetch("http://192.168.3.7:8080/wind_speeds")
             .then(response => response.json())
             .then(data => this.setState({ data : chartData(extractPoints(data.results),extractLabels(data.results)) }));
     }
