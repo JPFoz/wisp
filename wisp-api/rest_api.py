@@ -3,7 +3,7 @@ import datetime
 from datetime import timedelta
 from utils.db_accessor import DbAccessor
 
-app = Flask(__name__, static_folder="../wisp-app/build/static", template_folder="../wisp-app/build")
+app = Flask(__name__, static_folder="/home/pi/wisp/wisp-app/build/static", template_folder="/home/pi/wisp/wisp-app/build")
 db_accessor = DbAccessor()
 
 
