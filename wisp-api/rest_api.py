@@ -35,7 +35,7 @@ def get_date_params(client_request):
     date_end = client_request.args.get('date_end')
 
     if not date_start:
-        date_start_datetime = datetime.datetime.now() - timedelta(hours=6)
+        date_start_datetime = datetime.datetime.now() - timedelta(hours=12)
     else:
         date_start_datetime = datetime.datetime.strptime(date_start, '%Y-%m-%d %H:%M:%S.%f')
 

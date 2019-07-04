@@ -1,5 +1,6 @@
 import React from 'react';
 import {Line as LineChart} from 'react-chartjs-2';
+import Websocket from 'react-websocket';
 
 function chartData(the_data, the_labels) {
   return {
@@ -36,6 +37,7 @@ function extractLabels(response) {
 }
 
 const options = {
+
   scaleShowGridLines: true,
   scaleGridLineColor: 'rgba(0,0,0,.05)',
   scaleGridLineWidth: 1,
@@ -50,6 +52,7 @@ const options = {
   datasetStroke: true,
   datasetStrokeWidth: 2,
   datasetFill: true,
+
 };
 
 const styles = {
@@ -68,11 +71,10 @@ class LineChartWind extends React.Component {
     }
   }
 
-  componentDidMount(){
-      fetch("http://192.168.3.7:8080/wind_speeds")
-            .then(response => response.json())
-            .then(data => this.setState({ data : chartData(extractPoints(data.results),extractLabels(data.results)) }));
-    }
+  handleData(data) {
+      let result = JSON.parse(data);
+      this.setState({ data : chartData(extractPoints(result),extractLabels(result)) });
+    };
 
   render() {
     return (
@@ -80,6 +82,8 @@ class LineChartWind extends React.Component {
         <LineChart data={this.state.data}
           options={options}
           width="600" height="250"/>
+        <Websocket url='ws://192.168.3.7:5000/wind'
+              onMessage={this.handleData.bind(this)}/>
       </div>
     )
   }
