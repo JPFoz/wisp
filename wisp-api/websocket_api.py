@@ -11,7 +11,7 @@ accessor = DbAccessor()
 async def serve_client(websocket, path):
     while True:
         if 'wind' in path:
-            latest = accessor.get_wind_speed_measurements(datetime.datetime.now() - timedelta(minutes=20), datetime.datetime.now())
+            latest = accessor.get_wind_speed_measurements(datetime.datetime.now() - timedelta(minutes=3), datetime.datetime.now())
             results = json.dumps([{"wind_speed": item["wind_speed"], "date_created": str(item["date_created"])} for item in latest])
             await websocket.send(results)
             await asyncio.sleep(5)
