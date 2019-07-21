@@ -1,7 +1,10 @@
-from flask import Flask, request, jsonify, render_template
 import datetime
+import os
+
+from flask import Flask, request, jsonify, render_template
 from datetime import timedelta
 from utils.db_accessor import DbAccessor
+
 
 app = Flask(__name__, static_folder="/home/pi/wisp/wisp-app/build/static", template_folder="/home/pi/wisp/wisp-app/build")
 db_accessor = DbAccessor()
@@ -48,4 +51,4 @@ def get_date_params(client_request):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8080, host='0.0.0.0')
+    app.run(debug=True, port=int(os.environ["WISP_API_PORT"]), host='0.0.0.0')

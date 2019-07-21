@@ -1,10 +1,11 @@
 import mysql.connector.pooling
+import os
 
 DB_SETTINGS = {
     "host": "localhost",
-    "user": "pi",
+    "user": os.environ["WISP_DB_USERNAME"],
     "port": 3306,
-    "password": "SecRetPI",
+    "password": os.environ["WISP_DB_PASSWORD"],
     "database": "weather"
 }
 
