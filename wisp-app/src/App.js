@@ -32,8 +32,8 @@ function extractData(response) {
 
     for (const item of response){
       arrPressure.push(item.pressure);
-      arrHumidity.push(item.temperature);
-      arrTemperature.push(item.humidity);
+      arrHumidity.push(item.humidity);
+      arrTemperature.push(item.temperature);
       labels.push(item.date_created)
     }
     data.pressure_data = chartData("Pressure", arrPressure,labels);

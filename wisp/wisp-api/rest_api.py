@@ -4,9 +4,11 @@ import os
 from flask import Flask, request, jsonify, render_template
 from datetime import timedelta
 from utils.db_accessor import DbAccessor
+from flask_cors import CORS
 
 
 app = Flask(__name__, static_folder="/home/pi/wisp/wisp-app/build/static", template_folder="/home/pi/wisp/wisp-app/build")
+CORS(app)
 db_accessor = DbAccessor()
 
 

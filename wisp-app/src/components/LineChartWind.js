@@ -8,8 +8,8 @@ function chartData(the_data, the_labels) {
     datasets: [
       {
         label: 'Wind Speed',
-        fillColor: 'rgba(220,220,220,0.2)',
-        strokeColor: 'rgba(220,220,220,1)',
+        fillColor: 'rgba(40,0,0,0.2)',
+        strokeColor: 'rgba(40,2020,0,1)',
         pointColor: 'rgba(220,220,220,1)',
         pointStrokeColor: '#fff',
         pointHighlightFill: '#fff',

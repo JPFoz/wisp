@@ -19,7 +19,7 @@ wisp-app/.pnp.js
 .env.production.local
 .idea/*
 .idea/workspace.xml
-
+.vscode
 wisp-app/npm-debug.log*
 wisp-app/yarn-debug.log*
 wisp-app/yarn-error.log*
