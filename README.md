@@ -1,6 +1,8 @@
 # WISP
 Raspberry PI Zero powered Weather Station! 
 
+![alt text](https://github.com/FosterFromGloucester/wisp/blob/master/IMG_20190630_142630.jpg?raw=true)
+
 ## Summary
 This is just a quick MVP hack job to get a running weather station collecting data. 
 The goal is to collect:
@@ -24,3 +26,6 @@ The goal is to collect:
 1. Sensors -> deamon -> MySQL DB 
 2. MySQL DB-> Rest API -> Dashboard
 3. MySQL DB -> Websocket API -> Dashboard
+
+![alt text](https://github.com/FosterFromGloucester/wisp/blob/master/IMG_20190627_192537.jpg?raw=true)
+![alt text](https://github.com/FosterFromGloucester/wisp/blob/master/IMG_20190630_162734.jpg?raw=true)
